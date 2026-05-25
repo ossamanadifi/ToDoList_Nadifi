@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",            // Versione ECMAScript per output
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,  
+    "rewriteRelativeImportExtensions": true, // Risoluzione moduli aggiornata (Node >=16)
+    "outDir": "./dist",             // Cartella per i file compilati
+    "rootDir": "./src",   
+    "ignoreDeprecations": "6.0",          // Cartella sorgente
+    "strict": true,                 // Abilita tutte le verifiche di tipo rigorose
+    "esModuleInterop": true,        // Compatibilità con import CommonJS
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,            // Ignora controlli su file di definizione esterni
+    "types": ["node"],
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

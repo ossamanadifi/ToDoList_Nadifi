@@ -1,0 +1,31 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User { 
+  id    String   @id @default(uuid())
+  name  String
+  email String  @unique
+  pswd  String
+  tasks Task[] 
+} 
+
+model Task { 
+  id            String   @id @default(uuid())
+  title         String
+  description   String
+  state         TaskStatus @default(PLANNED) 
+  author    User    @relation(fields: [authorId], references: [id], onDelete: Cascade) 
+  authorId  String
+} 
+
+enum TaskStatus {
+  COMPLETED
+  PLANNED
+}

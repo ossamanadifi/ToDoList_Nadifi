@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mytask
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/mytask
+      JWT_SECRET: "q8fG+5U1jF9aL3G5tZy3k8K2H9z0pR1vJ4sQ2mN1fH0="
+    command: sh -c "npx prisma migrate deploy && npm run dev"

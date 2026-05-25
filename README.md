@@ -1,14 +1,12 @@
-# Project Title
+# ToDoList - API 
 
-ToDoList - API 
+Progettato da Ossama Nadifi per Mr. Apps
 
 ## Description
 
 Il progetto prevede la progettazione e lo sviluppo di una API RESTful dedicata alla gestione di task personali. E' prevista la possibilità di autenticarsi al servizio, e successivamente di svolgere le CRUD relative alle task.
 
-## Getting Started
-
-### Dependencies
+## Stack tecnologico
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10

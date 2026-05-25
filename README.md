@@ -10,6 +10,9 @@ Il progetto prevede la progettazione e lo sviluppo di una API RESTful dedicata a
 
 
 ### NodeJS
+### Express
+### PostgreSQL
+### Prisma
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders

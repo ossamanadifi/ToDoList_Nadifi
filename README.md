@@ -2,16 +2,14 @@
 
 Progettato da Ossama Nadifi per Mr. Apps
 
-## Description
+## Descrizione
 
 Il progetto prevede la progettazione e lo sviluppo di una API RESTful dedicata alla gestione di task personali. E' prevista la possibilità di autenticarsi al servizio, e successivamente di svolgere le CRUD relative alle task.
 
 ## Stack tecnologico
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
 
-### Installing
+### NodeJS
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders

@@ -28,7 +28,7 @@ Il servizio sarà raggiungibile al seguente indirizzo:
 ```
 http://localhost:8080
 ```
-con la documentazione dell'API a questo link:
+con la documentazione dell'API a questo link una volta avviato il Docker:
 ```
 http://localhost:8080/docs
 ```
@@ -46,8 +46,9 @@ npx prisma generate
 ```
 npm run coverage
 ```
-E' stato possiblie testare gran parte dell'API, tranne le casistiche di errori interni. Come riportato dall'immagine qui sotto, è stato possibile testare una buona percentuale della totalità del servizio.
+È stato possibile testare gran parte dell’API, ad eccezione delle casistiche relative agli errori interni. 
 
 ![Sceen test](test_coverage.png)
+Come mostrato nell’immagine seguente, è stata raggiunta una buona percentuale di copertura dei test del servizio.
 
 Progettato da Ossama Nadifi per Mr. Apps

@@ -82,6 +82,7 @@ con la documentazione dell'API a questo link una volta avviato il Docker:
 ```
 http://localhost:8080/docs
 ```
+_* L'implementazione dell'intefaccia Swagger.Ui è stata svolta senza considerare il funzionamento su di essam, ma solamente la visualizzazione dei vari dati. *_
 ### Esecuzione Test
 I test sono stati svolti utilizzando Vitest, e per eseguirli è necessario eseguire i seguenti passaggi: 
 - **Installare le dipendenze**

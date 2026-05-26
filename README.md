@@ -1,5 +1,5 @@
 # ToDoList - API 
-
+_Progettato da Ossama Nadifi per Mr. Apps - 2026_
 ## Descrizione
 
 Il progetto prevede la progettazione e lo sviluppo di una API RESTful dedicata alla gestione di task personali. E' prevista la possibilità di autenticarsi al servizio, e successivamente di svolgere le CRUD relative alle task.
@@ -16,7 +16,57 @@ Il progetto prevede la progettazione e lo sviluppo di una API RESTful dedicata a
 - **JSDoc**: Strumento per la generazione automatica della documentazione del codice tramite commenti strutturati.
 
 ### Motivazioni
-Non avendo particolare familiarità con lo sviluppo di API in Node.js, lo stack tecnologico è stato definito tenendo conto di diversi fattori. In particolare, trattandosi di un servizio web di dimensioni ridotte, le tecnologie sono state scelte privilegiando l’**efficienza**, **semplicità d'implementazione** e **la popolarità**. Quest’ultimo aspetto ha permesso di reperire facilmente documentazione e risorse utili per l’implementazione delle funzionalità richieste, incluse eventuali estensioni.
+Non avendo particolare familiarità con lo sviluppo di API in Node.js, lo stack tecnologico è stato definito tenendo conto di diversi fattori. In particolare, trattandosi di un servizio web di dimensioni ridotte, le tecnologie sono state scelte privilegiando l’**efficienza**, la **semplicità d'implementazione** e la **popolarità**. Quest’ultimo aspetto ha permesso di reperire facilmente documentazione e risorse utili per l’implementazione delle funzionalità richieste, incluse eventuali estensioni.
+
+## Funzionalità
+
+- **Registrazione**: Inserendo i dati dell'utente secondo lo schema predefinito, sarà possibile registrarsi al servizio. Il controllo sui dati in input avviene tramite un middleware dedicato e uno schema ZOD.
+
+- **Autenticazione**: Inserendo i dati dell'utente secondo lo schema predefinito, sarà possibile autenticarsi al servizio. Il controllo sui dati in input avviene tramite un middleware dedicato e uno schema ZOD. Tutte le operazione relative all'account e alle task necessitano di autenticazione, garantita nel momento in cui si effettua l'accesso grazie alla generazione di un token JWT, associato successivamente in modo automatico ai cookies del client, o in alternativa come header **Authorization** secondo lo schema Bearer.
+
+- **Ottieni dati utente**: Una volta autenticato, l'utente può ottenere le informazioni correlate al suo profilo. Il controllo sull'autenticazione avviene tramite un middleware dedicato.
+
+- **Crea task**: Una volta autenticato, l'utente può creare una nuova task. Per l'inserimento della nuova mansione è necessario rispettare uno schema predefinito. La validazione dei dati in input è garantita grazie alla presenza di un middleware dedicato ed un modello ZOD.
+
+- **Aggiorna task**: Una volta autenticato, l'utente può aggiornare una task precedentemente creata dal suo profilo. L'autenticazione è garantita dal middleware dedicato, ma sono comunque presenti diversi controlli per garantire la presenza della task e la paternità dell'utente.
+
+- **Cancella task**: Una volta autenticato, l'utente può cancellare una task precedentemente creata dal suo profilo. L'autenticazione è garantita dal middleware dedicato, ma sono comunque presenti diversi controlli per garantire la presenza della task e la paternità dell'utente.
+
+- **Ottieni task**: Una volta autenticato, l'utente può ottere i dati legati ad una specifica task. Ogni utente può visualizzare solamente le task associate al suo profilo.
+
+- **Ottieni tutte le  task**: Una volta autenticato, l'utente può ottere i dati legati a tutte le task associate al suo account.
+
+## Endpoint
+Seguendo lo schema della documentazione JsDoc, gli endpoint sono stati organizzati in questo modo:
+### Auth
+- POST `/auth/register` → **Registrazione**
+- POST `/auth/login` → **Autenticazione**
+
+### Account
+- GET `/account` → **Ottieni dati utente**
+
+### Orders
+- POST `/tasks` → **Crea task**
+- PUT `/tasks/{id}` → **Aggiorna task**
+- DELETE `/tasks/{id}` → **Cancella task**
+- GET `/tasks/{id}` → **Ottieni task**
+- GET `/tasks` → **Ottieni tutte le task**
+
+## Data model
+Il servizio è stato definito considerando due principali modelli di dati:
+
+### User
+- `id: string` → ID utente in formato _uuid_
+- `name: string` → nome completo
+- `email: string` → email
+- `pswd: string` → password profilo
+
+### User
+- `id: string` → ID task in formato _uuid_
+- `title: string` → titolo
+- `description: string` → descrizion
+- `state: ENUM("PLANNED", "COMPLETED")` → Enum per definire lo stato della task
+- `AuthorId: string` → ID creatore task in formato _uuid_
 
 ## Esecuzione
 ### Esecuzione API
@@ -34,7 +84,7 @@ http://localhost:8080/docs
 ```
 ### Esecuzione Test
 I test sono stati svolti utilizzando Vitest, e per eseguirli è necessario eseguire i seguenti passaggi: 
-- **Installare le dipendenza**
+- **Installare le dipendenze**
 ```
 npm install
 ```
@@ -46,9 +96,7 @@ npx prisma generate
 ```
 npm run coverage
 ```
-È stato possibile testare gran parte dell’API, ad eccezione delle casistiche relative agli errori interni. 
+Lo svolgimento dei test ha permesso di analizzare quasi ogni casistica gestita nel servizio, focalizzandosi sui controller, siccome gran parte della logica della API è gestito all'interno di essi. E' stato possibile testare tutti i casi, tranne quelli di errore interno del servizio _(status code 500)_.
 
 ![Sceen test](test_coverage.png)
-Come mostrato nell’immagine seguente, è stata raggiunta una buona percentuale di copertura dei test del servizio.
-
-Progettato da Ossama Nadifi per Mr. Apps
+_Come mostrato nell’immagine seguente, le prove hanno raggiunto un coverage quasi completo, raggiungendo mediamente circa il 90%._

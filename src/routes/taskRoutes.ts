@@ -16,6 +16,21 @@ taskRouter.use(authMiddleware);
  *       - Tasks
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *         description: Numero della pagina da recuperare.
+ *       - in: query
+ *         name: pageSize
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *         description: Numero di task da restituire per pagina.
  *     responses:
  *       200:
  *         description: Lista di task

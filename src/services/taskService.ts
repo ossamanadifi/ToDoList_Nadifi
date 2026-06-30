@@ -14,7 +14,10 @@ export const getTasksService = async (userId: string) => {
     const tasks = await prisma.task.findMany({
         where: {
             authorId: userId
-        }
+        },
+        orderBy: {
+            createdAt: 'asc', //ordina le task in base alla data di creazione in ordine decrescente
+        },
     });     
 
     return tasks;
@@ -26,7 +29,10 @@ export const getTasksPaginatedService = async (userId: string, skip: number, tak
             authorId: userId
         },
         skip,
-        take
+        take,
+        orderBy: {
+            createdAt: 'asc',
+        },
     });     
 
     return tasks;

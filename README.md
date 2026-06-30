@@ -61,10 +61,10 @@ Il servizio è stato definito considerando due principali modelli di dati:
 - `email: string` → email
 - `pswd: string` → password profilo
 
-### User
+### Task
 - `id: string` → ID task in formato _uuid_
-- `title: string` → titolo
-- `description: string` → descrizion
+- `title: string` → titolo associato alla task
+- `description: string` → descrizione task
 - `state: ENUM("PLANNED", "COMPLETED")` → Enum per definire lo stato della task
 - `AuthorId: string` → ID creatore task in formato _uuid_
 

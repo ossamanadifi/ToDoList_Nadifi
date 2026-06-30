@@ -58,9 +58,9 @@ Il servizio è stato definito considerando due principali modelli di dati:
 
 ### User
 - `id: string` → ID utente in formato _uuid_
-- `name: string` → nome completo
-- `email: string` → email
-- `pswd: string` → password profilo
+- `name: string` → nome completo utente
+- `email: string` → email utente
+- `pswd: string` → password utente
 
 ### Task
 - `id: string` → ID task in formato _uuid_

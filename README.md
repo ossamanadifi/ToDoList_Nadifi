@@ -51,6 +51,7 @@ Seguendo lo schema della documentazione JsDoc, gli endpoint sono stati organizza
 - DELETE `/tasks/{id}` → **Cancella task**
 - GET `/tasks/{id}` → **Ottieni task**
 - GET `/tasks` → **Ottieni tutte le task**
+- GET `/tasks?page=*&pageSize=*` → **Ottieni tutte le task applicando una paginazione con 'page' pari al numero della pagina e 'pageSize' che rappresenta la dimensione di queste**
 
 ## Data model
 Il servizio è stato definito considerando due principali modelli di dati:
@@ -65,14 +66,15 @@ Il servizio è stato definito considerando due principali modelli di dati:
 - `id: string` → ID task in formato _uuid_
 - `title: string` → titolo associato alla task
 - `description: string` → descrizione task
+- `createdAt: dateTime` → timestamp della creazione della task
 - `state: ENUM("PLANNED", "COMPLETED")` → Enum per definire lo stato della task
 - `AuthorId: string` → ID creatore task in formato _uuid_
 
 ## Esecuzione
 ### Esecuzione API
-L'esecuzione è stata unificata grazie all'implementazione di Docker, grazie al quale è possibile eseguire il servizio con un solo comando:
+L'esecuzione è stata unificata grazie all'implementazione di Docker, tramite il quale è possibile eseguire il servizio con un solo comando:
 ```
-docker compose --build
+docker compose up --build
 ```
 Il servizio sarà raggiungibile al seguente indirizzo:
 ```
@@ -82,7 +84,7 @@ con la documentazione dell'API a questo link una volta avviato il Docker:
 ```
 http://localhost:8080/docs
 ```
-_* L'implementazione dell'intefaccia Swagger.Ui è stata svolta senza considerare il funzionamento su di essam, ma solamente la visualizzazione dei vari dati. *_
+_* L'implementazione dell'intefaccia Swagger.Ui è stata svolta senza considerare il funzionamento su di essa, ma solamente la visualizzazione dei vari dati. *_
 ### Esecuzione Test
 I test sono stati svolti utilizzando Vitest, e per eseguirli è necessario eseguire i seguenti passaggi: 
 - **Installare le dipendenze**
@@ -97,7 +99,6 @@ npx prisma generate
 ```
 npm run coverage
 ```
-Lo svolgimento dei test ha permesso di analizzare quasi ogni casistica gestita nel servizio, focalizzandosi sui controller, siccome gran parte della logica della API è gestito all'interno di essi. E' stato possibile testare tutti i casi, tranne quelli di errore interno del servizio _(status code 500)_.
 
 ![Sceen test](test_coverage.png)
-_Come mostrato nell’immagine seguente, le prove hanno raggiunto un coverage quasi completo, raggiungendo mediamente circa il 90%._
+L'attività di testing ha prodotto risultati complessivamente molto positivi, garantendo un elevato livello di copertura del codice. Nonostante non sia stato raggiunto il valore completo, la gran parte dei moduli principali raggiunge una copertura del superiore al 90%, indicando come le funzionalità fondamentali siano state testate in maniera esaustiva.

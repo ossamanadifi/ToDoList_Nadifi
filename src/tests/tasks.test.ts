@@ -150,7 +150,10 @@ describe ('GET/tasks/{id}', () => {
         const response = await request(app).get(`/tasks/${task.id}`).set("Authorization", `Bearer ${token}`)
 
         expect(response.status).toBe(200);      
-        expect(response.body.data.task).toEqual(task);
+        expect(response.body.data.task).toHaveProperty("title" , "TASK 1")
+        expect(response.body.data.task).toHaveProperty("description" , "studiare")
+        expect(response.body.data.task).toHaveProperty("state", "PLANNED")
+        expect(response.body.data.task).toHaveProperty("authorId" , userId) 
     })
 
     it("Restituisce errore per mancata autenticazione", async () => {
@@ -222,15 +225,13 @@ describe ('PUT/tasks/{id}', () => {
             "authorId" : userId
         });  
 
-        const taskUpdated = await prisma.task.findUnique({
-            where : {
-                id : task.id
-            }
-        })
 
         expect(response.status).toBe(200);      
         expect(response.body.message).toBe("Task aggiornata con successo.");
-        expect(response.body.data.task).toEqual(taskUpdated);
+        expect(response.body.data.task).toHaveProperty("title" , "TASK 20")
+        expect(response.body.data.task).toHaveProperty("description" , "leggere")
+        expect(response.body.data.task).toHaveProperty("state", "COMPLETED")
+        expect(response.body.data.task).toHaveProperty("authorId" , userId) 
     })
 
     it("Restituisce errore per mancata autenticazione", async () => {

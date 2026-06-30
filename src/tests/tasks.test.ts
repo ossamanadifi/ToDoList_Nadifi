@@ -70,7 +70,7 @@ describe ('GET / tasks', () => {
         const response = await request(app).get("/tasks");
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non presente. Assicurarsi di essere autenticati");
+        expect(response.body.message).toBe("Token non presente. Assicurarsi di essere autenticati");
     })
 
     it("Restituisce risposta vuota", async () => {
@@ -107,7 +107,7 @@ describe ('POST / tasks', () => {
         });  
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non presente. Assicurarsi di essere autenticati");
+        expect(response.body.message).toBe("Token non presente. Assicurarsi di essere autenticati");
 
     })
 
@@ -166,7 +166,7 @@ describe ('GET/tasks/{id}', () => {
         const response = await request(app).get(`/tasks/${task.id}`);  
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non presente. Assicurarsi di essere autenticati");
+        expect(response.body.message).toBe("Token non presente. Assicurarsi di essere autenticati");
     })
 
     it('Restituisce errore per autenticazione di utente errato', async () =>{
@@ -193,14 +193,14 @@ describe ('GET/tasks/{id}', () => {
         const response = await request(app).get(`/tasks/${task.id}`).set("Authorization", `Bearer ${token2}`)
 
         expect(response.status).toBe(403);      
-        expect(response.body.error).toBe("Assicurati di inserire una task creata dal tuo account.");
+        expect(response.body.message).toBe("Assicurati di inserire una task creata dal tuo account.");
     })
 
     it("Restituisce errore per task mancante", async () => {
         const response = await request(app).get(`/tasks/550e8400-e29b-41d4-a716-446655440000`).set("Authorization", `Bearer ${token}`);
 
         expect(response.status).toBe(404);      
-        expect(response.body.error).toBe("Task non trovata!");
+        expect(response.body.message).toBe("Task non trovata!");
     })
 })
 
@@ -251,7 +251,7 @@ describe ('PUT/tasks/{id}', () => {
         });  
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non presente. Assicurarsi di essere autenticati");
+        expect(response.body.message).toBe("Token non presente. Assicurarsi di essere autenticati");
     })
 
     it('Restituisce errore per autenticazione di utente errato', async () =>{
@@ -289,7 +289,7 @@ describe ('PUT/tasks/{id}', () => {
         })
 
         expect(response.status).toBe(403);      
-        expect(response.body.error).toBe("Assicurati di inserire una task creata dal tuo account.");
+        expect(response.body.message).toBe("Assicurati di inserire una task creata dal tuo account.");
     })
 
     it("Should return error for missing task", async () => {
@@ -298,7 +298,7 @@ describe ('PUT/tasks/{id}', () => {
         });  
 
         expect(response.status).toBe(404);      
-        expect(response.body.error).toBe("Task non trovata!");
+        expect(response.body.message).toBe("Task non trovata!");
     })
 })
 
@@ -332,7 +332,7 @@ describe ('DELETE/tasks/{id}', () => {
         const response = await request(app).delete(`/tasks/${task.id}`);  
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non presente. Assicurarsi di essere autenticati");
+        expect(response.body.message).toBe("Token non presente. Assicurarsi di essere autenticati");
     })
 
     it('Restituisce errore per autenticazione di utente errato', async () =>{
@@ -359,7 +359,7 @@ describe ('DELETE/tasks/{id}', () => {
         const response = await request(app).delete(`/tasks/${task.id}`).set("Authorization", `Bearer ${token}`);  
 
         expect(response.status).toBe(403);      
-        expect(response.body.error).toBe("Assicurati di fare riferimento ad una task creata dal tuo account.");
+        expect(response.body.message).toBe("Assicurati di fare riferimento ad una task creata dal tuo account.");
     })
 
     it("Restituisce errore per task mancante", async () => {
@@ -368,6 +368,6 @@ describe ('DELETE/tasks/{id}', () => {
         });  
 
         expect(response.status).toBe(404);      
-        expect(response.body.error).toBe("Task non trovata!");
+        expect(response.body.message).toBe("Task non trovata!");
     })
 })

@@ -46,7 +46,7 @@ describe ('POST /auth/register', () => {
         });  
 
         expect(response.status).toBe(400);
-        expect(response.body.error).toBe("Email già presente nel servizio.");
+        expect(response.body.message).toBe("Email già esistente");
     })    
 
     it("Restituisce errore per dati mancanti", async () => {
@@ -86,7 +86,7 @@ describe ('POST /auth/login', () => {
         });  
 
         expect(response.status).toBe(401);
-        expect(response.body.error).toBe("Email o password invalida.");
+        expect(response.body.message).toBe("Email o password invalida.");
     })    
 
     it("Restituisce errore per dati mancanti", async () => {

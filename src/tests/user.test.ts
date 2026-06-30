@@ -32,7 +32,7 @@ describe ('GET / account', () => {
         const response = await request(app).get("/account").set("Authorization", "Bearer abaucbdcuadbavkdbcdcbacab");
 
         expect(response.status).toBe(401);      
-        expect(response.body.error).toBe("Token non riconosciuto. Effettuare nuovamente l'accesso");
+        expect(response.body.message).toBe("Token non riconosciuto. Effettuare nuovamente l'accesso");
 
     })    
 })

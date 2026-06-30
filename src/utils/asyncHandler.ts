@@ -1,5 +1,7 @@
-import { Request, Response, NextFunction } from "express";
+import express from 'express'
+import type { Request, Response, NextFunction } from "express";
 
+//middleware che permette di gestire gli errori in modo centralizzato
 export const asyncHandler =
   (fn: (req: Request, res: Response, next: NextFunction) => Promise<any>) =>
   (req: Request, res: Response, next: NextFunction) => {

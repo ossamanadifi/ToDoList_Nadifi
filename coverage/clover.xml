@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1782655405399" clover="3.2.0">
-  <project timestamp="1782655405399" name="All files">
-    <metrics statements="202" coveredstatements="196" conditionals="49" coveredconditionals="41" methods="36" coveredmethods="34" elements="287" coveredelements="271" complexity="0" loc="202" ncloc="202" packages="12" files="24" classes="24"/>
+<coverage generated="1782819736699" clover="3.2.0">
+  <project timestamp="1782819736699" name="All files">
+    <metrics statements="209" coveredstatements="198" conditionals="51" coveredconditionals="39" methods="37" coveredmethods="34" elements="297" coveredelements="271" complexity="0" loc="209" ncloc="209" packages="12" files="24" classes="24"/>
     <package name="generated.prisma.client">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="client.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\generated\prisma\client\client.ts">
@@ -53,9 +53,9 @@
         <line num="585" count="3" type="stmt"/>
         <line num="595" count="3" type="stmt"/>
         <line num="605" count="3" type="stmt"/>
-        <line num="616" count="3" type="stmt"/>
-        <line num="624" count="3" type="stmt"/>
-        <line num="686" count="3" type="stmt"/>
+        <line num="617" count="3" type="stmt"/>
+        <line num="625" count="3" type="stmt"/>
+        <line num="701" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src">
@@ -86,7 +86,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="33" coveredstatements="33" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8"/>
+      <metrics statements="35" coveredstatements="32" conditionals="6" coveredconditionals="2" methods="8" coveredmethods="8"/>
       <file name="authController.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\controllers\authController.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="9" count="3" type="stmt"/>
@@ -100,28 +100,30 @@
         <line num="32" count="1" type="stmt"/>
       </file>
       <file name="taskController.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\controllers\taskController.ts">
-        <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <metrics statements="23" coveredstatements="20" conditionals="6" coveredconditionals="2" methods="5" coveredmethods="5"/>
         <line num="9" count="3" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="50" count="3" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
-        <line num="52" count="3" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="64" count="3" type="stmt"/>
-        <line num="65" count="3" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="2" falsecount="4"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="70" count="3" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
       </file>
       <file name="userController.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\controllers\userController.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -215,7 +217,7 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="46" coveredstatements="46" conditionals="27" coveredconditionals="23" methods="8" coveredmethods="8"/>
+      <metrics statements="49" coveredstatements="47" conditionals="27" coveredconditionals="23" methods="9" coveredmethods="8"/>
       <file name="authService.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\services\authService.ts">
         <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="5" count="3" type="stmt"/>
@@ -231,39 +233,42 @@
         <line num="38" count="1" type="stmt"/>
       </file>
       <file name="taskService.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\services\taskService.ts">
-        <metrics statements="32" coveredstatements="32" conditionals="23" coveredconditionals="19" methods="5" coveredmethods="5"/>
+        <metrics statements="35" coveredstatements="33" conditionals="23" coveredconditionals="19" methods="6" coveredmethods="5"/>
         <line num="13" count="3" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="43" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="47" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
         <line num="55" count="3" type="stmt"/>
-        <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="63" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
-        <line num="70" count="1" type="cond" truecount="4" falsecount="1"/>
-        <line num="71" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="72" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="74" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="82" count="3" type="stmt"/>
-        <line num="83" count="3" type="stmt"/>
-        <line num="87" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="91" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="60" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="64" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
+        <line num="72" count="3" type="stmt"/>
+        <line num="76" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="87" count="1" type="cond" truecount="4" falsecount="1"/>
+        <line num="88" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="89" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="99" count="3" type="stmt"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="104" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="108" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
       </file>
       <file name="userService.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\services\userService.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -286,17 +291,19 @@
       </file>
     </package>
     <package name="src.utils">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="appError.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\utils\appError.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="14" type="stmt"/>
-        <line num="3" count="14" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
       </file>
       <file name="asyncHandler.ts" path="C:\Users\ossam\Desktop\ToDoList_Nadifi\src\utils\asyncHandler.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="27" type="stmt"/>
-        <line num="6" count="38" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="27" type="stmt"/>
+        <line num="8" count="38" type="stmt"/>
       </file>
     </package>
     <package name="src.validators">

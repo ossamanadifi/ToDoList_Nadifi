@@ -12,6 +12,7 @@ connectDB();
 import taskRouter from "./routes/taskRoutes.ts"
 import authRouter from "./routes/authRoutes.ts"
 import userRouter from "./routes/userRoutes.ts"
+import { errorMiddleware } from './middleware/errorMiddleware.ts';
 
 //creazione app
 const app = express();
@@ -26,5 +27,6 @@ app.use("/auth", authRouter)
 app.use("/tasks", taskRouter)
 app.use("/account", userRouter)
 
+app.use(errorMiddleware); //middleware per la gestione degli errori
 
 export { app } ;
